@@ -1,0 +1,41 @@
+.container{
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.accordion{
+  outline: none;
+  border: none;
+  background: plum;
+  color: #333;
+  cursor: pointer;
+  padding: 18px;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.accordion:last-child{
+  border-bottom: none;
+}
+.accordion i{
+  float: right;
+}
+.accordion::after{
+  content: '\002B';
+  color: #333;
+  font-weight: bold;
+  float: right;
+}
+.active::after{
+  content: "\2212"
+}
+.panel{
+  padding: 0 18px;
+  background: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+.active, .accordion:hover{
+  background: violet;
+}

@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+/*******************Tab디자인***********************/
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+.tab button {
+  display: block;
+  color: #000;
+  background: inherit;
+  padding: 23px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.tab button:hover,
+.tab button.active {
+  background: #ccc;
+}
+
+.tabcontent {
+  float: left;
+  width: 70%;
+  padding: 0px 15px;
+  border: 1px solid #ccc;
+  border-left: none;
+  height: 300px;
+}
