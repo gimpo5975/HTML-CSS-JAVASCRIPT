@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOUTUBE</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="imgbox" id="RFQ0VXh7bgc">
+        <img src="https://img.youtube.com/vi/RFQ0VXh7bgc/maxresdefault.jpg" alt="youtubeimg" />
+      </div>
+        <p>[EP.06] 복수는 나의 것</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="jpjelHo9Q4E">
+          <img src="https://img.youtube.com/vi/jpjelHo9Q4E/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>허훈 상무 개인기모음</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="effiRzv742A">
+          <img src="https://img.youtube.com/vi/effiRzv742A/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>슈퍼스타는 의심하는게 아닙니다 | 골든스테이트 VS 밀워키 NBA 리뷰</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="cFCrLh72FlE">
+          <img src="https://img.youtube.com/vi/cFCrLh72FlE/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>AD도 뉴욕의 왕에겐 안 된다! 괴물 요키치 35/20/11. 감독 저격한 MPJ</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="xqDziLdcjbI">
+          <img src="https://img.youtube.com/vi/xqDziLdcjbI/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>프로 '4명' vs 비선출 '5명' 농구하면 누가 이김?? (전반전) | 크록스맨</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="1I5Y8wU9fdo">
+          <img src="https://img.youtube.com/vi/1I5Y8wU9fdo/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>커리논쟁 하승진 전태풍이 결론내겠습니다</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="dHkhrk6APig">
+          <img src="https://img.youtube.com/vi/dHkhrk6APig/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>'무조건 1픽' 빅터 웸반야마 vs G리그 이그나이트 2경기 하이라이트</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="l3TKSr3n2zY">
+          <img src="https://img.youtube.com/vi/l3TKSr3n2zY/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>(북산VS산왕)영화보다 더 영화같은 경기 - NBA2K23 슬램덩크 모드 #7</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="l0ERo2ckEhE">
+          <img src="https://img.youtube.com/vi/l0ERo2ckEhE/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>Golden State Warriors vs Milwaukee Bucks Full Game Highlights | March 11, 2023 | FreeDawkins</p>
+      </div>
+      <div class="col">
+        <div class="imgbox" id="tL5vmugDMCU">
+          <img src="https://img.youtube.com/vi/tL5vmugDMCU/maxresdefault.jpg" alt="youtubeimg" />
+        </div>
+        <p>제임스하든 스텝백, 유로스텝에 사용되는 게더스텝 분석 - NBA선수분석 7. 제임스 하든</p>
+      </div>
+    </div>
+  </div>
+ <div class="fade">
+   <div class="popup">
+    <div class="close">x</div>
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('.imgbox').click(function(){
+        const id = $(this).attr('id');
+      let link = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+id+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+      $('.fade').fadeIn(300, function(){
+      $(".popup").html(link);
+    });
+     });
+     $('.fade').click(function(){
+      $(this).fadeOut(300);
+     }); 
+    });
+  </script>
+</body>
+</html>
