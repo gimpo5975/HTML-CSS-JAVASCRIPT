@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .wrap {
+        width: 1200px;
+        height: 100vh;
+        margin: 0 auto;
+      }
+      form {
+        padding-top: 50px;
+      }
+      table {
+        padding-top: 30px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-color: rgb(205, 220, 3);
+      }
+      /*제목 부분*/
+      caption {
+        height: 50px;
+        line-height: 50px;
+        background-color: rgb(254, 255, 234);
+        border-top: 1px solid rgb(205, 220, 3);
+        border-left: 1px solid rgb(205, 220, 3);
+        border-right: 1px solid rgb(205, 220, 3);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      /*값 제목 명*/
+      .tTitle {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(254, 255, 234);
+        letter-spacing: 2px;
+        font-size: 1.1rem;
+      }
+      /*입력양식이 있는 부분*/
+      .tCont {
+        width: 450px;
+        box-sizing: border-box; /*크기를 테두리 까지*/
+        padding-left: 10px;
+      }
+      .input1 {
+        width: 250px;
+        height: 27px;
+        border: 1px solid rgb(205, 220, 3);
+        border-radius: 5px;
+      }
+      .btn {
+        width: 100px;
+        height: 29px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        background-color: rgb(254, 255, 234);
+        border: 1px solid rgb(205, 220, 3);
+        border-radius: 5px;
+      }
+      .iphone {
+        width: 100px;
+      }
+      .ipost {
+        width: 120px;
+        margin-left: 15px;
+      }
+      .iaddress {
+        width: 320px;
+      }
+      .sub {
+        height: 40px;
+        text-align: center;
+      }
+      .sub > .btn {
+        margin: 10px 15px;
+      }
+      tr:last-child {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 입력 양식 -->
+      <form action="" method="post" name="userMem">
+        <!-- 회원가입 양식 -->
+        <table border="1">
+          <caption>
+            회원가입 양식
+          </caption>
+          <tr>
+            <th class="tTitle"><label for="userid">아이디</label></th>
+            <td class="tCont">
+              <input
+                type="text"
+                class="input1"
+                name="userid"
+                id="userid"
+                required
+                autofocus
+                placeholder="아이디 입력"
+              />
+              <button type="button" class="btn">중복체크</button>
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle"><label for="userpass">비밀번호</label></th>
+            <td class="tCont">
+              <input
+                type="password"
+                class="input1"
+                name="userpass"
+                id="userpass"
+                required
+                placeholder="영문,숫자,특수문자 혼합사용"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle">
+              <label for="userpasscheck">비밀번호 확인</label>
+            </th>
+            <td class="tCont">
+              <input
+                type="password"
+                class="input1"
+                name="userpasscheck"
+                id="userpasscheck"
+                required
+                placeholder="영문,숫자,특수문자 혼합사용"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle"><label for="username">이름</label></th>
+            <td class="tCont">
+              <input
+                type="text"
+                class="input1"
+                name="username"
+                id="username"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle"><label for="gender">성별</label></th>
+            <td class="tCont">
+              <input
+                type="radio"
+                class="input2"
+                name="gender"
+                id="gender"
+                value="male"
+              />남
+              <input
+                type="radio"
+                class="input2"
+                name="gender"
+                id="gender"
+                value="female"
+              />여
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle"><label for="phone">휴대폰번호</label></th>
+            <td class="tCont">
+              <input
+                type="text"
+                class="input1 iphone"
+                name="phone1"
+                id="phone1"
+              />
+              -
+              <input
+                type="text"
+                class="input1 iphone"
+                name="phone2"
+                id="phone2"
+              />
+              -
+              <input
+                type="text"
+                class="input1 iphone"
+                name="phone3"
+                id="phone3"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle"><label for="email">이메일</label></th>
+            <td class="tCont">
+              <input type="email" class="input1" name="email" id="email" />
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle"><label for="post">우편변호</label></th>
+            <td class="tCont">
+              <button type="button" class="btn">우편번호</button
+              ><input type="text" class="input1 ipost" name="post" id="post" />
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle"><label for="address">주소</label></th>
+            <td class="tCont">
+              <input
+                type="text"
+                class="input1 iaddress"
+                name="address"
+                id="address"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th class="tTitle"><label for="detailaddress">상세주소</label></th>
+            <td class="tCont">
+              <input
+                type="text"
+                class="input1 iaddress"
+                name="detailaddress"
+                id="detailaddress"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="tCont sub">
+              <input type="submit" class="btn" value="가입하기" />
+              <input type="reset" class="btn" value="새로작성" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
