@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 양식</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0 auto;
+        width: 1200px;
+        height: 100vh;
+        font-family: sans-serif;
+      }
+      form {
+        padding-top: 20px;
+        width: 700px;
+        height: 600px;
+        margin: 0 auto;
+      }
+      .top {
+        margin: 0;
+        padding: 0;
+        width: 500px;
+        height: 40px;
+        line-height: 40px;
+        background-color: rgb(228, 228, 228);
+        font-size: 20px;
+        font-weight: bold;
+        border: 1px solid rgb(166, 164, 164);
+        text-align: center;
+      }
+      .title {
+        margin: 0;
+        padding: 0;
+        margin-right: -7px;
+        width: 150px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid rgb(166, 164, 164);
+        background-color: rgb(228, 228, 228);
+      }
+
+      .content {
+        margin: 0;
+        padding: 0;
+        width: 350px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid rgb(166, 164, 164);
+      }
+      .content > input {
+        margin: 0;
+        padding: 0;
+        /* padding-bottom: 5px; */
+        height: 20px;
+        border: 1px solid rgb(166, 164, 164);
+        border-radius: 5px;
+        height: 20px;
+        font-weight: 600px;
+      }
+      .content>button {
+        margin: 0;
+        padding: 0;
+        padding: 0 5px;
+        height: 25px;
+        margin-left: 10px;
+        font-weight: 600;
+        border-radius: 5px;
+        border: 1px solid rgb(166, 164, 164);
+      }
+      form > ul {
+        list-style: none;
+        text-align: center;
+      }
+      form li {
+        text-align: center;
+        display: inline-block;
+      }
+      .bottomNav {
+        margin: 0 auto;
+        padding-top: 10px;
+        width: 200px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .bottomNav > button {
+        font-weight: 600;
+        height: 25px;
+        margin: 0;
+        padding: 0 5px;
+        border-radius: 5px;
+        border: 1px solid rgb(166, 164, 164);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <form action="">
+        <ul>
+          <li class="top">회원가입 양식</li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="id">아 이 디</label>
+          </li>
+          <li class="content">
+            <input type="text" name="id" id="id" required />
+            <button value="중복체크">중복체크</button>
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="pass">비밀번호</label>
+          </li>
+          <li class="content">
+            <input type="password" name="pass" id="pass" required />
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="pass2">비밀번호 확인</label>
+          </li>
+          <li class="content">
+            <input type="password" name="pass2" id="pass2" required />
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="name">이 름</label>
+          </li>
+          <li class="content">
+            <input type="text" name="name" id="name" required />
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="id">성 별</label>
+          </li>
+          <li class="content">
+            <input type="text" name="id" id="id" required />
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="phone">휴대폰번호</label>
+          </li>
+          <li class="content">
+            <input type="phone" name="phone" id="phone" required />
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="mail">이메일</label>
+          </li>
+          <li class="content">
+            <input type="email" name="mail" id="mail" required />
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="id">우편번호</label>
+          </li>
+          <li class="content">
+            <input type="text" name="id" id="id" required />
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="id">주소</label>
+          </li>
+          <li class="content">
+            <input type="text" name="id" id="id" required />
+          </li>
+        </ul>
+        <ul>
+          <li class="title">
+            <label for="id">상세주소</label>
+          </li>
+          <li class="content">
+            <input type="text" name="id" id="id" required />
+          </li>
+        </ul>
+        <div class="bottomNav">
+          <button type="submit" value="가입하기">가입하기</button>
+          <button type="reset" value="새로작성">새로작성</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
