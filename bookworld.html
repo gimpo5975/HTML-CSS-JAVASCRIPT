@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>책마을 책세상</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/basic.css" />
+    <!--pabicon 설정-->
+    <link rel="icon" href="../images/logo.jpg" type="images/png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      ul > li {
+        display: inline-block;
+      }
+      /*전체박스*/
+      .container {
+        width: 100%;
+        height: 80vh;
+      }
+      /*헤더부분 - 로고, 탑 네비, 네비, hr*/
+      .header {
+        width: 100%;
+        height: 200px;
+      }
+      .topnav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 90px;
+        line-height: 80px;
+        padding-top: 10px;
+      }
+
+      .logo > a {
+        font-weight: bold;
+        font-size: 27px;
+      }
+      .topnav li > a {
+        font-size: 17px;
+        margin-left: 25px;
+        font-weight: 600;
+        color: rgb(94, 94, 138);
+      }
+      .nav {
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        margin: 0px 20px 0px;
+        display: flex;
+        justify-content: center;
+      }
+      .nav li > a {
+        font-size: 17px;
+        color: rgb(94, 94, 138);
+        font-weight: 600;
+        padding: 0 15px;
+      }
+      .header > hr {
+        border: 2px solid gainsboro;
+        margin-bottom: 0;
+      }
+      /*컨텐츠 부분 - 통합검색, 배너, 컨텐들, 게시판, 책소개*/
+      .content {
+        width: 100%;
+        height: 800px;
+      }
+      .search {
+        padding-left: 100px;
+      }
+      .search > input {
+        margin-left: 20px;
+      }
+      .search > label {
+        font-size: 25px;
+        font-weight: 600;
+        color: rgb(94, 94, 138);
+        left: 20px;
+      }
+      .search > .searchbar {
+        width: 250px;
+        height: 35px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+      }
+      .banner {
+        margin-top: 10px;
+        width: 100%;
+        height: 200px;
+        background-image: url(../images/banner.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .maincontent {
+        margin-top: 15px;
+      }
+      .contentbox1,
+      .contentbox2,
+      .contentbox3,
+      .contentbox4 {
+        width: 230px;
+        height: 200px;
+      }
+      .contentbox1 {
+        background-image: url(../images/flower_small7.jpg);
+        background-size: cover;
+        float: left;
+      }
+      .contentbox2 {
+        background-image: url(../images/flower_small6.jpg);
+        background-size: cover;
+        margin-left: 13px;
+        margin-right: 13px;
+        float: left;
+      }
+      .contentbox3 {
+        background-image: url(../images/flower_small5.jpg);
+        background-size: cover;
+        margin-right: 13px;
+        float: left;
+      }
+      .contentbox4 {
+        background-image: url(../images/flower_small4.jpg);
+        background-size: cover;
+        float: left;
+      }
+      .bottomnav {
+        clear: both;
+        padding-top: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: rgb(94, 94, 138);
+      }
+      .bottomnav a {
+        margin-left: 25px;
+      }
+      .syntax {
+        padding-top: 20px;
+      }
+      .board {
+        width: 530px;
+        height: 280px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+        float: left;
+        margin-right: 20px;
+      }
+      .board > p {
+        color: rgb(61, 59, 59);
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .board > p:last-child {
+        margin-top: 20px;
+      }
+      .product {
+        width: 400px;
+        height: 280px;
+        border: 1px solid black;
+        float: left;
+      }
+      .productimg {
+        width: 50%;
+        height: 100%;
+        background-image: url(../images/cola.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        float: left;
+      }
+      .explain {
+        width: 50%;
+        height: 100%;
+        float: left;
+      }
+      .explain > p {
+        font-size: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+      }
+      /*푸터부분*/
+      .footer {
+        padding-top: 20px;
+        width: 100%;
+        height: 200px;
+      }
+      .footer > hr {
+        border: 2px solid gainsboro;
+      }
+      .footer li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .footer a {
+        display: block;
+        font-size: 15px;
+        font-weight: 600;
+        color: rgb(94, 94, 138);
+        padding-left: 30px;
+      }
+      .footertext{
+        padding-top: 10px;
+        padding-left: 20px;
+      }
+      .footertext>p{
+        font-weight: 500;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="topnav">
+          <!--logo-->
+          <h1 class="logo">
+            <a href="#"
+              ><img
+                src="../images/logo.jpg"
+                alt="책마을책세상 로고"
+              />&nbsp;&nbsp;책마을&nbsp; 책세상</a
+            >
+          </h1>
+          <!--sign in, sign up, site map-->
+          <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">사이트맵</a></li>
+          </ul>
+          <!--topnav-->
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">프로그램</a></li>
+            <li><a href="#">열린공간</a></li>
+            <li><a href="#">동아리 모임</a></li>
+            <li><a href="#">이용안내</a></li>
+            <li><a href="#">자료실</a></li>
+            <li><a href="./bookworld load.html">오시는길</a></li>
+          </ul>
+          <!--//nav-->
+        </div>
+        <hr />
+        <!--//header-->
+      </header>
+      <div class="content">
+        <section class="search">
+          <label for="search">책마을 책세상 통합검색</label>
+          <input type="radio" class="radio" name="search" id="search" />자료검색
+          <input type="radio" class="radio" name="search" id="search" />강좌검색
+          <input
+            type="text"
+            class="searchbar"
+            placeholder="내용을 입력해주세요"
+          />
+          <!--search-->
+        </section>
+        <section class="banner"></section>
+        <section class="maincontent">
+          <div class="contentbox1"></div>
+          <div class="contentbox2"></div>
+          <div class="contentbox3"></div>
+          <div class="contentbox4"></div>
+        </section>
+        <section class="bottomnav">
+          <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">문화행사</a></li>
+            <li><a href="#">책바다</a></li>
+          </ul>
+        </section>
+        <section class="syntax">
+          <div class="board">
+            <p>.2022년 하반기 강좌 안내</p>
+            <p>.[학부모 교육] '기질로 보는 동기를 높이는 학습...</p>
+          </div>
+          <div class="product">
+            <div class="productimg"></div>
+            <div class="explain">
+              <p>도서명 : 콜라마시는<br />북극곰</p>
+              <p>저자 : 신형건</p>
+              <p>출판사 : 푸른책들</p>
+              <p>
+                내용 : 46편의 동시를<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;담고
+                있는 동시집 <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;환경의 중요성을
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생각하게 하는<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;물음을
+                제시
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!--content-->
+      </div>
+      <footer class="footer">
+        <hr />
+        <ul>
+          <li><a href="#">정보공개알림</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이용서비스현황</a></li>
+          <li><a href="#">이용규정</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">전화번호안내</a></li>
+          <li><a href="#">오시는길</a></li>
+        </ul>
+        <hr />
+        <div class="footertext">
+          <p>
+            (우) 06220 서울시 강남구 테헤란로(강남) 대표전화 : 02-1234-1234 /
+            팩스번호 02-1234-1234
+          </p>
+          <p>Copyright&copy;2023 책마을책세상 ALL Right Reserved</p>
+        </div>
+      </footer>
+      <!--container-->
+    </div>
+  </body>
+</html>
