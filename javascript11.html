@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let div = document.querySelector("div");
+        let fruits = ["사과", "딸기", "복숭아", "수박", "포도"];
+
+        // for (let i = 0; i < fruits.length; i++) {
+        //   alert(fruits[i]);
+        // } //end of for
+
+        // let innerDiv = '';
+        // //for of 반복문
+        // for (let arr of fruits) {
+        //     innerDiv += '<h3>'+arr+'</h3>'//공백 변수에 h3크기 만큼의 arr 요소 하나씩 저장
+        // } //end of for of
+        // div.innerHTML = innerDiv;
+
+        for (let arr of fruits) {
+          let h1 = document.createElement("h3"); //h3 태그를 만든다
+          h1.textContent = arr;
+          div.appendChild(h1);
+        } //end of for of
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <h1>태그를 만들어서 이 곳에 배열 요소의 값을 하나씩 출력-->
+    <div></div>
+  </body>
+</html>
