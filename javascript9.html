@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script>
+      //에러, 컴파일러는 위에서 아래로 읽음, 아직 body부분을 읽지 못헀는데
+      //body에 있는 태그를 읽어오라하고, 그 태그에 output이 담고 있는
+      //내용을 쓰라고 해서 에러 발생
+
+      //원의 반지름을 입력받아 원의 넓이 구하기(반지름 *반지름 * PI)
+      let radius = prompt(
+        "반지름을 입력하세요 >>> ",
+        "정수로 입력 부탁합니다잉"
+      );
+      radius = Number(radius);
+      //상수 선언
+      const PI = 3.14;
+
+      let output = "";
+      output += "입력받은 반지름 : " + radius + "<br>";
+      output += "원의 넓이 : " + radius * radius * PI + "<br>";
+
+      //html 태그 읽어오기
+      const innerDiv = document.querySelector(".inner"); //태그 중 클래스 이름이 inner인 것
+      const textDiv = document.querySelector(".text"); //태그 중 클래스 이름이 text인 것
+
+      //body의 태그 안의 내용 읽어 오기
+      //태그.innerHTML
+      //태그.textContent
+
+      //body의 태그 안에 글쓰기
+      //태그.innerHTML = 값;
+      //태그.textContent = 값;
+
+      innerDiv.innerHTML = output;
+      textDiv.textContent = output;
+      textDiv.style.color = "red";
+    </script> -->
+    <script>
+      //에러, 컴파일러는 위에서 아래로 읽음, 아직 body부분을 읽지 못헀는데
+      //body에 있는 태그를 읽어오라하고, 그 태그에 output이 담고 있는
+      //내용을 쓰라고 해서 에러 발생
+
+      document.addEventListener("DOMContentLoaded", function () {
+        //원의 반지름을 입력받아 원의 넓이 구하기(반지름 *반지름 * PI)
+        let radius = prompt(
+          "반지름을 입력하세요 >>> ",
+          "정수로 입력 부탁합니다잉"
+        );
+        radius = Number(radius);
+        //상수 선언
+        const PI = 3.14;
+
+        let output = "";
+        output += "입력받은 반지름 : " + radius + "<br>";
+        output += "원의 넓이 : " + radius * radius * PI + "<br>";
+
+        //html 태그 읽어오기
+        const innerDiv = document.querySelector(".inner"); //태그 중 클래스 이름이 inner인 것
+        const textDiv = document.querySelector(".text"); //태그 중 클래스 이름이 text인 것
+
+        //body의 태그 안의 내용 읽어 오기
+        //태그.innerHTML : 태그의 내용을 읽어오기(html을 인식)
+        //태그.textContent : 태그의 내용을읽어오기 (htnml을 문자로 인식) 보안에 유리
+
+        //body의 태그 안에 글쓰기
+        //태그.innerHTML = 값; 값을 태그 안의 내용을 써라(html을 적용)
+        //태그.textContent = 값; 값을 태그 안의 내용으로 써라(html을 문자로 처리)
+
+        innerDiv.innerHTML = output;
+        textDiv.textContent = output;
+        textDiv.style.color = "red";
+      });
+    </script>
+  </head>
+  <body>
+    <div class="inner"></div>
+    <hr />
+    <div class="text"></div>
+  </body>
+</html>
