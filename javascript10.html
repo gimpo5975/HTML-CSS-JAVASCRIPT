@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+        배열 : 여러 자료를 묶어서 활용할 수 있는 특수한 자료형
+                요소로 정수, 실수, 배열, 함수, 객체, 문자열 등이 모두 올 수 있음
+                자바는 하나의 타입만 가능
+        */
+      //body 부분을 다 읽고 실행 해라
+      document.addEventListener("DOMContentLoaded", function () {
+        let arr = ["사과", "딸기", 30, 10, 7.5, true, "우유"];
+
+        let div = document.querySelector('#arrTest');
+       
+        let innerDiv = '';
+        //arr의 요소 하나씩 알럴 창에 띄움
+        for (let i = 0; i < arr.length; i++) {
+          //alert(arr[i]);
+          innerDiv += '<h1>';
+            innerDiv += arr[i];
+            innerDiv +=  '</h1>';
+        } //end of for
+        div.innerHTML = innerDiv;
+        div.style.backgroundColor = '#aabbcc';
+      });
+    </script>
+  </head>
+  <body>
+    <div id="arrTest"></div>
+  </body>
+</html>
