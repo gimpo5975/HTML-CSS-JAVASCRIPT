@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마우스 클릭 이벤트</title>
+    <style>
+      h1 {
+        user-select: none; /*마우스 드래그 못함, 여러번 클릭해도 글자 선택 안됨*/
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const h1 = document.querySelector("h1"); //h1 변수에 본문에있는 h1 값 저장
+
+        let counter = 0; //클릭횟수를 표현할 변수
+        h1.addEventListener("click", function () {
+          //클릭하면 함수 실행
+          counter++; //클릭횟수 증가
+          h1.textContent = "클릭횟수 : " + counter;
+        }); //end of click
+
+        //contextmenu : 마우스 오른쪽 버튼 이벤트
+        // 이벤트 막기 : 문서객체.preeventDefault
+        h1.addEventListener("contextmenu", function (event) {
+          event.preventDefault();
+        }); //end of contextmenu
+      });
+    </script>
+  </head>
+  <body>
+    <h1>클릭 횟수 : 0</h1>
+  </body>
+</html>
