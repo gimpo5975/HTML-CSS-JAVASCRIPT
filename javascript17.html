@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열 정렬 및 연결자</title>
+    <style>
+        h1{
+            font-size: 5rem;
+            font-weight: bold;
+            color: darkorchid;
+            background-color: chartreuse;
+        }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fruits = ["사과", "딸기", "감", "복숭아", "키위"];
+        const h1 = document.querySelector("#test");
+
+        // h1.textContent = fruits;
+        // join(연결에 사용할 문자)
+        h1.textContent = fruits.join("🏝️");
+
+        //pop() : 맨 마지막 요소 제거
+        h1.textContent = fruits.pop(); //제거되는 요소 출력
+        h1.textContent = fruits.join("🧟‍♂️"); //제거 후 요소들
+
+        //배열.sort() 오름차순 정렬(사전 순)
+        h1.textContent = fruits.sort().join("🧟‍♂️");
+        
+        //배열.reverse() 내림차순으로 정렬(사전 순)
+        h1.textContent = fruits.reverse().join("🧟‍♂️");
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="test"></h1>
+  </body>
+</html>
