@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inputText{
+            width: 300px;
+            height: 50px;
+            resize: none;  /* none - 크기조절 불가, horizontal- 수평방향으로만 조절
+                                  vertical - 수직방향으로 크기 조절, both - 기본값, 양방향 크기 조절 가능 */
+        }
+
+    </style>
+    <script>
+        // window.onload = function() {}
+        document.addEventListener('DOMContentLoaded', function(){
+            const h3 = document.querySelector('.outText');
+            const  textarea = document.querySelector('.inputText');
+
+            let listner = function(event){  // (event) => {
+                const textLength = event.currentTarget.value.length;
+                h3.textContent = `입력한 글자 수 : ${textLength} `;
+                //                `입력한 글자 수 : ${textLength} `
+                //'입력한 글자 수 : ' + textLength;
+            }
+
+            textarea.addEventListener('keyup', listner);
+
+            // textarea.addEventListener('keyup', (event)=> {
+            //     const textLength = event.currentTarget.value.length;
+            //     h3.textContent = '입력한 글자 수 : ' + textLength;
+            // });
+
+            /*
+               키보드로 부터 입력 받을 때 이벤트 
+                    keyup : 키보드에서 키가 떨어질 때 실행
+                    keydown : 키가 눌릴 때 실행, 키보드를 꾹 누르고 있을 때도,
+                              입력될 때도 실행, 아시아권의 문자를 제대로 처리하지 못함
+                    keypress : 키가 입력되었을 때 실행,  아시아권의 문자를 제대로 처리하지 못함
+
+                checkbox, radio 버튼의 이벤트 : change
+                input, textarea 태그에 입력된 글자 수 : 문서객체.value.length
+                       입력된 글자 : 문서객체.value
+                기본적으로 제공하는 이벤트 막기 : 문서객체.preventDefault();
+
+                요소(태그) 만들기 : 부모객체.createElement()
+                요소 추가  :  부모객체.appendChild(자식으로 추가할 요소); 
+                            appendChild()는 부모를 하나만 가질 수 있음
+
+             */
+
+        });
+    </script>
+
+</head>
+<body>
+    <h3 class="outText"></h3>
+    <textarea class="inputText"></textarea>
+    <!-- <textarea cols="" rows=""></textarea> 
+            <textarea></textarea> 
+    -->  
+</body>
+</html>
