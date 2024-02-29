@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      div.wrap {
+        width: 700px;
+        height: 700px;
+        margin: 80px auto;
+        border: none;
+        border-radius: 50%;
+        position: relative;
+        background: linear-gradient(red, orange,yellow, white);
+      }
+      div.timeCheck {
+        position: absolute;
+        left: 180px;
+        top: 240px;
+      }
+      span.text {
+        font-size: 50px;
+      }
+      h3.timerOutput {
+        position: absolute;
+        left: 280px;
+        top: 310px;
+        font-size: 70px;
+      }
+      input.checkbox {
+        width: 40px; /*Desired width*/
+        height: 40px; /*Desired height*/
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let [timer, timerId] = [0, 0]; // timer = 0, timerId = 0;
+        const checkbox = document.querySelector(".checkbox");
+        const h3 = document.querySelector(".timerOutput");
+
+        //타이머
+        // setTimeout(처리할내용, 시간) : 시간이 되면 단 한번만 실행
+        // setInterval(처리할내용, 시간) : 시간이 되면 반복해서 실행
+        //멈추기 위해서는 timerId 필요
+        //clearInterval(timerId) : 반복작업 멈춤
+
+        checkbox.addEventListener("change", (event) => {
+          if (event.currentTarget.checked) {
+            //체크가 된 상태라면
+            timerId = setInterval(() => {
+              timer += 1;
+              h3.textContent = `${timer}초`;
+            }, 1000);
+          } else {
+            //체크가 해제된 상태이면 시간 이벤트 종료
+            clearInterval(timerId);
+          } //end of if
+        }); //end of setInterval
+      }); //end of checkbox
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="timeCheck">
+        <input type="checkbox" class="checkbox" />
+        <span class="text">타이머 활성화</span>
+      </div>
+      <h3 class="timerOutput">0초</h3>
+    </div>
+  </body>
+</html>
