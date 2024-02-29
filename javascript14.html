@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 객체</title>
+    <script>
+      /*
+            객체: 자바스크립트에서 여러 자료를 다룰 때 사용
+            let 객체명 = {}
+            const 객체명 = {}
+            var 객체명 =  {}
+
+            let 객체명 = {
+                키 : 값,
+                키 : 값,
+                ...
+            }
+        */
+
+      let student = {
+        name: "김원중",
+        age: 28,
+        hobby: function (hobby) {
+          //메소드, 객체안에 선언되는 함수를 메소드라고 함.
+          alert(this.name + "님의 취미는" + hobby + "입니다.");
+          alert(student.name + "님의 취미" + hobby);
+        }
+      }//end of student
+
+      alert(student.name);
+      student.name = "중원김";
+
+      alert(student.hobby("농구"));
+
+      //추가
+      student.ssn = 202402;
+      document.write(student.name);
+      document.write(student.ssn);
+
+      //삭제
+      delete student.name;
+      document.write(student.name);
+      document.write(student.age);
+      document.write(student.ssn);
+
+
+    </script>
+  </head>
+  <body></body>
+</html>
