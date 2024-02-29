@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .multi{
+            width: 200px;
+            height: 200px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .selectClass{
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 2rem;
+            text-align: center; 
+        }
+        .multiSect{
+            height: 200px; 
+        }
+    </style>
+    <script>
+        //function(){}  --->  () => {}
+        // window.onload = function(){}
+        // DOMContentLoaded : html문서를 브라우저가 다 읽고 나면, 이벤트
+        //                   웹 브라우저가 문서 객체를 모두 읽고 나서 실행
+        document.addEventListener('DOMContentLoaded', function(){ //이벤트핸들러, 이벤트리스너, 콜백함수
+            const select = document.querySelector('select');
+            // let select = document.querySelector('select');  //태그, .클래스명, #id명, [속성=값]
+            // var select = document.querySelector('select');
+            const msgH1 = document.querySelector('.msg');
+            const multTextH1 = document.querySelector('.multText');
+            // select.style.width = '200px';
+            // select.style.height ='50px';
+            // select.style.lineHeight ='50px';
+            //  ...
+
+            //   setAttribute(속성, 값);
+            //                   클래스   클래스명
+            select.setAttribute('class','selectClass');
+            
+            // 이벤트 제거 : 문서 객체.removeEventListener(이벤트, 이벤트리스너);
+            // 이벤트 처리 : 문서 객체.addEventListener(이벤트, 이벤트 리스너);
+            select.addEventListener('change', function(event){
+          
+                // event.currentTarget : 현재 작업 상태에 있는 요소(이벤트를 발생시킨 요소)
+                let opt= event.currentTarget.options; //내부의 옵션 태그 전체
+                let index = opt.selectedIndex; //옵션들 중에서 선택된 것의 인덱스
+                // index = event.currentTarget.options.selectedIndex;
+
+                //문서객체.textContent = 내용;  태그안에 내용을 쓰기
+                //문서객체.innerHTML = 내용; 태그안에 내용을 쓰기
+                //문서객체.textContent : 태그 안의 글자 읽어오기
+                //문서객체.innerHTML : 태그 안의 글자 읽어오기
+                //opt[index] : 인덱스에 해당하는 옵션 태그
+                msgH1.textContent = '선택한 과일 : ' + opt[index].textContent ; 
+
+                // 백틱(`)  `선택한 과일 : ${계산식 또는 변수..} `
+                //msgH1.textContent = `선택한 과일 : ${opt[index].textContent }`;
+             
+             });
+
+             //===================================================
+             let selectMulti = document.querySelector('.multiSect');
+             let multiSelectH1 = document.querySelector('.multText');
+
+            //  selectMulti.style.width='200px';
+
+             selectMulti.addEventListener('change', function(event){
+               let optMul = event.currentTarget.options;
+               let list = [];  //배열, 선택한 과일 이름을 담을 배열
+             
+               for(let element of optMul ){
+                    if(element.selected){   // 선택된 요소가 있으면
+                                            // selected : 선택, 항목의 선택
+                     list.push(element.textContent);  //배열에 요소 넣기
+                 }
+               }                                               // 연결할 때 join 안쪽의 문자를 이용해 연결
+               multiSelectH1.textContent = '선택한 과일들 : ' + list.join(', ');
+         
+             });
+        });
+    </script>
+</head>
+<body>
+    <h1>희망하는 과일을 선택해 주세요...</h1>
+    <select class="a aaa selectClass">
+        <option>사&nbsp;&nbsp;&nbsp;과</option>
+        <option>딸&nbsp;&nbsp;&nbsp;기</option>
+        <option>복숭아</option>
+        <option>키&nbsp;&nbsp;&nbsp;위</option>
+    </select>
+    <h1 class="msg">과일을 선택하면 여기에 나옴</h1> <!--  선택한 과일 : 사과 -->
+
+    <h1>희망하는 과일을 여럿 선택해 주세요...</h1>
+    <select class="multiSect selectClass" multiple>
+        <option>사&nbsp;&nbsp;&nbsp;과</option>
+        <option>딸&nbsp;&nbsp;&nbsp;기</option>
+        <option>복숭아</option>
+        <option>키&nbsp;&nbsp;&nbsp;위</option>
+    </select>
+    <h1 class="multText">과일을 선택하면 여기에 나옴</h1> <!--  선택한 과일들 : 사과 -->
+
+</body>
+</html>
