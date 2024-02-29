@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const beforeInput = document.querySelector('#before')
+      const afterInput = document.querySelector('#after')
+      const select = document.querySelector('select')
+      
+ 
+//함수를 이용해서 공통 부분 추출
+     const handler = () => {
+        const currentValue = Number(beforeInput.value)
+        const transConst = select.options[select.options.selectedIndex]
+        afterInput.value = (currentValue * Number(transConst.value)).toFixed(2)
+      }
+      beforeInput.addEventListener('keyup', handler)
+      select.addEventListener('change', handler) 
+ 
+  });
+  </script>
+  <style>
+    input{
+      height: 20px;
+      width: 100px;
+      line-height: 20px;
+      text-align: center;
+    }
+    select{
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      width: 100px;
+    }
+    span{
+      font-size: 13pt;
+    }
+  </style>
+</head>
+<body>
+     <input type="text" name="before" id="before"><span> cm = </span>
+    <input type="text" name="after"  id="after">
+    <select name="" id="">
+      <option value="10">밀리미터</option>
+      <option value="0.01">미터</option>
+      <option value="0.393701">인치</option>
+    </select>
+</body>
+</html>
