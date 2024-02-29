@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>버튼</title>
+    <script>
+      function butFun() {
+        const arr = [5, 15, 3, 65, 97, 27];
+        const button = document.querySelector(".but1");
+
+        arr.sort(function (a, b) {
+          return a - b;
+        }); //숫자 오름차순 정렬
+        button.textContent = arr;
+      } //end of butFun
+    </script>
+  </head>
+  <body>
+    <h1>버튼을 눌러 정렬하기</h1>
+    <!-- button 태그는 form에서 사용할 때 타입을 지정하지 않으면 submit 버튼이 된다.
+        form 태그 밖에서는 타입을 지정하지 않으면 그냥 버튼 기능이 된다.
+    -->
+    <button class="but1" onclick="butFun()">정렬되는 내용</button>
+  </body>
+</html>
