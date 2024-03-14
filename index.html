@@ -3,105 +3,183 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>웹사이트 연습</title>
-    <!-- 초기화 스타일시트 연결 -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/basic.css" />
+    <title>ADMINISTRATOR</title>
+    <link href="./css/reset.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/index.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <!-- .noto-sans kr-<uniquifier> {
-        font-family: "Noto Sans KR", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: <weight>;
-        font-style: normal;
-      } -->
-
-    <style>
-      /* 전체 박스 */
-      .wrap {
-        width: 100%;
-        height: 100vh;
-      }
-      /*위쪽부분 header, topContain, topNav ,mainNav*/
-      .header {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 20px;
-        background-color: beige; /*지울 부분*/
-      }
-      .topContain {
-        width: 100%;
-        height: 50px;
-        margin-bottom: 5px;
-        margin-bottom: 20px;
-        display: flex /*반드시 부모 요소에 배치해야 함*/;
-        /*flex는 대부분 부모요소에서 배치,결정하고 입력*/
-        flex-direction: row; /*row는 가로로, column은 세로로 배치*/
-        /*팰렉서블 박스 = 부모박스, 플렉스 아이템 = 자식*/
-        flex-wrap: wrap; /*크기가 넘치면 줄바꿈 한다.*/
-        justify-content: space-between; /*자식 요소들을 양끝에 배치*/
-        /*
-        justify-content: space-between;
-
-        첫 번째 하위 요소는 컨테이너의 시작 가장자리에 맞춰 정렬됩니다.
-        마지막 하위 요소는 컨테이너의 끝 가장자리에 맞춰 정렬됩니다.
-        하위 요소 사이에 남은 공간은 균등하게 분배됩니다.
-        */
-        background-color: white;
-      }
-      .topContain > h1 {
-        font-size: 2rem; /*부모 폰트 크기의 2배 만큼 크기를 가짐*/
-        font-size: 30px;
-        color: navy;
-        font-family: "Noto Sans KR", sans-serif;
-        letter-spacing: 3px; /*자간-글자사이의 간격*/
-      }
-      .topNav li {
-        display: inline-block;
-      }
-      .topNav li > a {
-        display: block;
-        /* box-sizing: border-box; 테두리와 padding을 포함 크기 */
-        /* width: 100px; */
-        padding: 5px 10px;
-      }
-      /*메인메뉴 부분*/
-    </style>
   </head>
+
   <body>
-    <div class="wrap">
-      <!-- header -->
+    <!-- container-->
+    <div class="container">
+      <!-- header-->
       <div class="header">
-        <!-- topContain -->
-        <div class="topContain">
-          <h1>책세상책마을</h1>
-          <!-- topNav -->
-          <div class="topNav">
-            <ul>
-              <li><a href="login.html">로그인</a></li>
-              <li><a href="./html/member.html">회원가입</a></li>
-              <li><a href="sitemap.html">사이트맵</a></li>
-            </ul>
-            <!-- end of topNav -->
-          </div>
-          <!-- end of topContain -->
-        </div>
-        <!-- mainNav -->
-        <div class="mainNav">
+        <h1 class="admin"><a href="./index_jyp.html">ADMINISTRATOR</a></h1>
+        <!--logo-->
+        <img
+          class="mainlogo"
+          src="./images/logo.png"
+          alt="This is PeplCore logo"
+        />
+        <!--topNav-->
+        <div class="topNav">
           <ul>
-            <li><a href="#">menu1</a></li>
-            <li><a href="#">menu2</a></li>
-            <li><a href="#">menu3</a></li>
-            <li><a href="#">menu4</a></li>
-            <li><a href="#">menu5</a></li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-store fa-lg"></i>&nbsp;&nbsp;
+              </a>
+            </li>
+            <li><a href="#"> <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;로그아웃</a></li>
           </ul>
-          <!-- end of mainNav -->
+          <!--end of topNav-->
         </div>
-        <!-- end of header -->
+        <!--end of header-->
       </div>
-      <!-- end of wrap -->
+      <!-- 왼쪽 사이드바 메뉴, 아코디언 사용할거임 -->
+      <div class="leftmain">
+        <ul class="sideMenu">
+          <!-- 회원 관리 -->
+          <li>
+            <div
+              class="accordion-header userhr"
+              onclick="ToggleAccordion(this)"
+            >
+              회원 관리
+            </div>
+            <div class="accordion-content">
+              <!--display:none-->
+              <p><a href="#">회원 관리</a></p>
+            </div>
+          </li>
+          <!-- 상품 관리 -->
+          <li>
+            <div class="accordion-header" onclick="ToggleAccordion(this)">
+              <a href="./productManagement.html">상품 관리</a>
+            </div>
+            <!--display:none-->
+            <div class="accordion-content">
+              <p><a href="./productManagement.html">상품 목록</a></p>
+            </div>
+          </li>
+          <!-- 게시글 관리 -->
+          <li>
+            <div class="accordion-header"onclick="ToggleAccordion(this)">
+              게시글 관리
+            </div>
+            <!--display:none-->
+            <div class="accordion-content">
+              <p><a href="#">공지사항</a></p>
+              <p><a href="#">FAQ</a></p>
+              <p><a href="#">QnA</a></p>
+              <p><a href="#">review</a></p>
+            </div>
+          </li>
+        </ul>
+        <!-- end of leftmain-->
+      </div>
+
+      <!-- main-->
+      <div class="main">
+        <!--maincontent-->
+        <div class="maincontent">
+          <h3>관리자 메인</h3>
+          <hr />
+          <!-- 신규 가입 회원-->
+          <h4>신규 가입 회원</h4>
+          <br />
+          이 부분은 jsp으로 구현해야 하는데 일단 보여주기는 해야 하니까 그냥
+          테이블로 만들었습니다.
+          <table style="width: 500px;height: 100px;text-align: center;">
+            <tr>
+              <th>이름</th>
+              <th>ID</th>
+              <th>전화번호</th>
+              <th>가입일</th>
+              <th>등급</th>
+            </tr>
+            <tr>
+              <td>이름1</td>
+              <td>ID1</td>
+              <td>전화번호1</td>
+              <td>가입일1</td>
+              <td>등급1</td>
+            </tr>
+            <tr>
+              <td>이름2</td>
+              <td>ID2</td>
+              <td>전화번호2</td>
+              <td>가입일2</td>
+              <td>등급2</td>
+            </tr>
+            <tr>
+              <td>이름3</td>
+              <td>ID3</td>
+              <td>전화번호3</td>
+              <td>가입일3</td>
+              <td>등급3</td>
+            </tr>
+          </table>
+          <hr class="lasthr" />
+          <!-- 최근 게시물 목록-->
+          <h4>최근 게시물 목록</h4>
+          <br />
+          이 부분은 jsp으로 구현해야 하는데 일단 보여주기는 해야 하니까 그냥
+          테이블로 만들었습니다.
+          <table style="width: 500px;height: 100px;text-align: center;">
+            <tr>
+              <th>게시판</th>
+              <th>제목</th>
+              <th>ID</th>
+              <th>작성일자</th>
+            </tr>
+            <tr>
+              <td>게시판</td>
+              <td>제목</td>
+              <td>ID</td>
+              <td>작성일자</td>
+            </tr>
+            <tr>
+              <td>게시판</td>
+              <td>제목</td>
+              <td>ID</td>
+              <td>작성일자</td>
+            </tr>
+            <tr>
+              <td>게시판</td>
+              <td>제목</td>
+              <td>ID</td>
+              <td>작성일자</td>
+            </tr>
+          </table>
+        </div>
+        <!-- end of maincontent-->
+      </div>
+      <!--end of main-->
+
+      <!--footer-->
+      <div class="Footer">
+        <p>Copyright &copy; 주식회사 불사조 All Rights Reserved</p>
+      </div>
+      <!--end of footer-->
     </div>
+    <!-- end of container -->
+
+    <!-- 아코디언 js 코드 -->
+    <script>
+      function ToggleAccordion(sideMenu) {
+        var content = sideMenu.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>
